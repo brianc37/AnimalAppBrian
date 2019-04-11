@@ -8,10 +8,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private TextView output;
-    ArrayList<Animal> animals;
+    ArrayList<Animal> animals = new ArrayList<>();
     Duck duck = new Duck();
     Fish fish = new Fish();
     Seal seal = new Seal();
+    Fox fox = new Fox();
 
 
     @Override
@@ -23,11 +24,21 @@ public class MainActivity extends AppCompatActivity {
         animals.add(fish);
         animals.add(duck);
         animals.add(seal);
+        animals.add(fox);
 
-        int i;
-        for(i=0; animals.size() > i; i++){
-            this.output.append("\n" + animals.get(i) + " goes: " + animals.get(i));
+        //int i;
+        //for(i=0; animals.size() > i; i++){
+        //    this.output.append("\n" + animals.get(i) + " goes " + animals.get(i).say());
+        //}
+
+        for(Animal printanimals : animals){
+            this.output.append("\n" + printanimals.getClass().getSimpleName() + " goes " + printanimals.say());
+            if (printanimals instanceof Seal) {
+                this.output.append("\n" + ((Seal)printanimals).play());
+            }
+            if (printanimals instanceof Fox) {
+                this.output.append("\n" + ((Fox)printanimals).play());
+            }
         }
-
     }
 }

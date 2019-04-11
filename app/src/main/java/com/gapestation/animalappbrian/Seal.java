@@ -1,12 +1,17 @@
 package com.gapestation.animalappbrian;
 
-public class Seal extends Animal {
+public class Seal extends Animal implements Animal.Fun {
     @Override
     public String say() {
-        return("arf");
+        return("ow ow ow");
     }
 
     public Seal(){
 
+    }
+
+    @Override
+    public String play() {
+        return("The seal bounces a ball off its nose.");
     }
 }
