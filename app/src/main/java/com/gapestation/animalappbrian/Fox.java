@@ -15,7 +15,7 @@ public class Fox extends Animal implements Animal.Fun {
         sayings.add("Fraka-kaka-kaka-kaka-kow!");
         sayings.add("A-hee-ahee ha-hee!");
         Random x = new Random();
-        int y = x.nextInt(8);
+        int y = x.nextInt(7);
         return(sayings.get(y));
     }
 
